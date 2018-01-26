@@ -45,6 +45,23 @@
 		
 		// and add it to the map
 		L.geoJSON(geojsonFeature).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"<b>");
+	
+		// create a custom popup: this gives the coordinates of the place where the user clicks
+		var popup = L.popup();
+		
+		// create an event detector to wait for the user's click event and then use the popup to show them where they clicked.
+		// Using the Leaflet API
+		
+		function onMapClick(e){
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You click the map at " + e.latlng.toString())
+				.openOn(mymap);
+		}
+		
+		// now add the click event detector to the map
+		mymap.on('click', onMapClick);
+		
 	</script>
 </body>
 </html>
