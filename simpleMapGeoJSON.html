@@ -55,7 +55,7 @@
 		});
 		
 		// and add it to the map
-		L.geoJSON(geojsonFeature),{
+		L.geoJSON(geojsonFeature,{
 			pointToLayer:function(feature,latlng){
 				return L.marker(latlng,{icon:testMarkerPink});
 			}
