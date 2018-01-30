@@ -21,6 +21,10 @@
 			getEarthquakes();
 		}
 		
+		function removeEarthquakeData() {
+			alert("remove the earthquake data here");
+		}
+		
 		// create a variable that will hold the XMLHttpRequest() - this must be done outside a function so that all the functions can use the same variable
 		var client;
 
@@ -64,6 +68,9 @@
 	
 	<button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data </button>
 	
+	<button id="removeEarthquakeData" name="removeEarthquakeData" onclick="removeEarthquakeData()">Click here to remove the Earthquake data </button>
+
+	
 	<!--the following script will load the map and set the default view and zoom, as well as loading the basemap tiles -->
 	<script>
 		// load a map
@@ -76,11 +83,7 @@
 		id: 'mapbox.streets'
 		}).addTo(mymap);
 		
-		//add a point
-		//L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello world!</b><br/>I am a popup.").openPopup();
-		
-		//add a circle
-		//L.
+
 	</script>
 </body>
 </html>
